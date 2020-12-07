@@ -3,4 +3,4 @@ project(cherno)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cherno main.cpp src/leetcode/reverseMatric.cpp src/leetcode/reverseMatric.h src/leetcode/minestDiffTime.cpp src/leetcode/minestDiffTime.h)
+add_executable(cherno main.cpp src/leetcode/reverseMatric.cpp src/leetcode/reverseMatric.h src/leetcode/minestDiffTime.cpp src/leetcode/minestDiffTime.h src/algorithm/DFS.cpp src/algorithm/DFS.h)

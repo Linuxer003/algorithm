@@ -1,9 +1,26 @@
 #include <iostream>
 #include <vector>
-#include "src/leetcode/minestDiffTime.h"
+#include "src/algorithm/DFS.h"
 
 int main() {
-  minestDiffTime m;
-  std::vector<std::string> s = {"23:59","00:00"};
-  std::cout << m.findMinDifference(s) << std::endl;
+  int N, M;
+  std::cin >> N >> M;
+  std::vector<std::vector<char>> field(N, std::vector<char>(M));
+  for (int i = 0; i < N; i++){
+    for (int j = 0; j < M; ++j) {
+      std::cin >> field[i][j];
+    }
+    std::cin.get();
+  }
+  DFS d;
+  int ans = 0;
+  for (int i = 0; i < N; i++){
+    for (int j = 0; j < M; ++j) {
+      if (field[i][j] == 'W'){
+        d.LakeCount(field, i, j);
+        ans++;
+      }
+    }
+  }
+  std::cout << ans << "\n";
 }
