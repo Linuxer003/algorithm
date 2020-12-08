@@ -1,26 +1,11 @@
 #include <iostream>
-#include <vector>
-#include "src/algorithm/DFS.h"
+#include "src/leetcode/ArrayBroke2Fibonacci.h"
 
 int main() {
-  int N, M;
-  std::cin >> N >> M;
-  std::vector<std::vector<char>> field(N, std::vector<char>(M));
-  for (int i = 0; i < N; i++){
-    for (int j = 0; j < M; ++j) {
-      std::cin >> field[i][j];
-    }
-    std::cin.get();
+  std::string s = "417420815174208193484163452262453871040871393665402264706273658371675923077949581449611550452755";
+  ArrayBroke2Fibonacci a;
+  auto ans = a.splitIntoFibonacci(s);
+  for (auto v : ans){
+    std::cout << v << "\n";
   }
-  DFS d;
-  int ans = 0;
-  for (int i = 0; i < N; i++){
-    for (int j = 0; j < M; ++j) {
-      if (field[i][j] == 'W'){
-        d.LakeCount(field, i, j);
-        ans++;
-      }
-    }
-  }
-  std::cout << ans << "\n";
 }
