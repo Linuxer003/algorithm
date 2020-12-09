@@ -2,9 +2,9 @@
 // Created by 王国洪 on 2020/12/7.
 //
 
-#include "minestDiffTime.h"
+#include "MinestDiffTime.h"
 
-int minestDiffTime::findMinDifference(std::vector<std::string> &timePoints) {
+int MinestDiffTime::findMinDifference(std::vector<std::string> &timePoints) {
   int n = timePoints.size();
   std::vector<int> mArray(n);
   for (int i = 0; i < n; i++){

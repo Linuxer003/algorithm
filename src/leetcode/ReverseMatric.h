@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-class reverseMatric {
+class ReverseMatric {
 public:
     int matrixScore(std::vector<std::vector<int>>& A);
     int matrixScore2(std::vector<std::vector<int>>& A);

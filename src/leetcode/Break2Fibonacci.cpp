@@ -2,16 +2,16 @@
 // Created by wgh on 2020/12/8.
 //
 
-#include "ArrayBroke2Fibonacci.h"
+#include "Break2Fibonacci.h"
 
-std::vector<int> ArrayBroke2Fibonacci::splitIntoFibonacci(std::string& S) {
+std::vector<int> Break2Fibonacci::splitIntoFibonacci(std::string& S) {
   std::vector<int> ans;
   int length = S.size();
   backtrace(ans, S, length, 0, 0, 0);
   return ans;
 }
 
-bool ArrayBroke2Fibonacci::backtrace(std::vector<int>& F, std::string& S, int length, int index, int sum, int prev) {
+bool Break2Fibonacci::backtrace(std::vector<int>& F, std::string& S, int length, int index, int sum, int prev) {
   if (index == length)
     return F.size() >= 3;
   long cur = 0;

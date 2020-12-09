@@ -1,11 +1,20 @@
 #include <iostream>
-#include "src/leetcode/ArrayBroke2Fibonacci.h"
+#include "src/leetcode/BrowserHistory.h"
 
 int main() {
-  std::string s = "417420815174208193484163452262453871040871393665402264706273658371675923077949581449611550452755";
-  ArrayBroke2Fibonacci a;
-  auto ans = a.splitIntoFibonacci(s);
-  for (auto v : ans){
-    std::cout << v << "\n";
-  }
-}
+  BrowserHistory b("hdqqhm.com");
+  b.visit("yltqsj.com");
+  b.forward(1);
+  b.back(1);
+  b.visit("cyv.com");
+  b.visit("vbpvni.com");
+  b.visit("opy.com");
+  b.visit("kbyzp.com");
+  b.back(7);
+  b.visit("fchhxaz.com");
+  b.back(6);
+  b.forward(9);
+  b.visit("rg.com");
+  b.visit("oemqn.com");
+  b.visit("hyqsb.com");
+ }

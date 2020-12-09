@@ -2,9 +2,9 @@
 // Created by 王国洪 on 2020/12/7.
 //
 
-#include "reverseMatric.h"
+#include "ReverseMatric.h"
 
-int reverseMatric::matrixScore(std::vector<std::vector<int>> &A) {
+int ReverseMatric::matrixScore(std::vector<std::vector<int>> &A) {
   // 结果值
   int ans = 0;
   int m = A.size();
@@ -52,7 +52,7 @@ int reverseMatric::matrixScore(std::vector<std::vector<int>> &A) {
   return ans;
 }
 
-int reverseMatric::matrixScore2(std::vector<std::vector<int>> &A) {
+int ReverseMatric::matrixScore2(std::vector<std::vector<int>> &A) {
   int m = A.size();
   if (m == 0){
     return 0;

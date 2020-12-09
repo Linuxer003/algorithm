@@ -9,7 +9,7 @@
 #include <string>
 #include <algorithm>
 
-class minestDiffTime {
+class MinestDiffTime {
 public:
     int findMinDifference(std::vector<std::string>& timePoints);
 };
