@@ -1,8 +1,9 @@
 #include <iostream>
-#include "src/algorithm/RegEx.h"
+#include <vector>
+#include "src/algorithm/DP.h"
 
 int main() {
-  RegEx r;
-  std::string s = "G76";
-  std::cout << r.isNumber(s) << '\n';
+  std::vector<int> nums = {3,3,3,2,5};
+  DP dp;
+  std::cout << dp.wiggleMaxLength(nums) << '\n';
 }
