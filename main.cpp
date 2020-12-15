@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "src/algorithm/DP.h"
+#include "src/leetcode/divDislike.h"
 
 int main() {
-  std::vector<int> nums = {3,3,3,2,5};
-  DP dp;
-  std::cout << dp.wiggleMaxLength(nums) << '\n';
+  divDislike d;
+  std::vector<std::vector<int>> dislike = {{1,2},{1,3},{2,3}};
+  std::cout << d.possibleBipartition(3,dislike) << '\n';
 }
