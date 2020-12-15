@@ -24,3 +24,7 @@ int DFS::LakeCount(std::vector<std::vector<char>>& field, int x, int y) {
   }
   return 0;
 }
+
+bool DFS::possibleBipartition(int N, std::vector<std::vector<int>> &dislikes) {
+  return false;
+}

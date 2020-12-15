@@ -9,6 +9,11 @@
 
 class DP {
 public:
+    /**
+     * 求解最长摇摆数组
+     * @param nums
+     * @return
+     */
     int wiggleMaxLength(std::vector<int>& nums);
 };
 

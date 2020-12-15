@@ -10,13 +10,16 @@
 
 class RegEx {
 public:
+    /**
+     * 判断是否有效数字，RegEx超时了，转为DFA求解
+     * @param s
+     * @return
+     */
+    int length = 7;
+    std::vector<std::vector<int>>* state;
     bool isNumber(std::string& s);
     RegEx();
     ~RegEx();
-
-private:
-    int length = 7;
-    std::vector<std::vector<int>>* state;
 };
 
 
