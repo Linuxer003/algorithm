@@ -26,5 +26,30 @@ int DFS::LakeCount(std::vector<std::vector<char>>& field, int x, int y) {
 }
 
 bool DFS::possibleBipartition(int N, std::vector<std::vector<int>> &dislikes) {
-  return false;
+  std::vector<std::vector<int>> graph =  std::vector<std::vector<int>>(N+1, std::vector<int>());
+  std::vector<int> color = std::vector<int>(N+1);
+  for (auto& value : dislikes){
+    graph[value[0]].push_back(value[1]);
+    graph[value[1]].push_back(value[0]);
+  }
+  for (int i = 1; i <= N; ++i) {
+    if (color[i] != 0)
+      continue;
+    if (!dfs(i, 1, color, graph))
+      return false;
+  }
+  return true;
 }
+
+bool DFS::dfs(int index, int c, std::vector<int> &color, std::vector<std::vector<int>> &graph) {
+  if (color[index] != 0)
+    return color[index] == c;
+  color[index] = c;
+  for (auto& value : graph[index]) {
+    if (!dfs(value, -c, color, graph))
+      return false;
+  }
+  return true;
+}
+
+

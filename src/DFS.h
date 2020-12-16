@@ -36,6 +36,7 @@ public:
      * @return
      */
     bool possibleBipartition(int N, std::vector<std::vector<int>>& dislikes);
+    bool dfs(int index, int c, std::vector<int>& color, std::vector<std::vector<int>>& graph);
 };
 
 
