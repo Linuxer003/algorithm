@@ -15,6 +15,23 @@ public:
      * @return
      */
     int wiggleMaxLength(std::vector<int>& nums);
+
+    /**
+     * leetCode 714 买卖股票的最佳时机含手续费
+     * @param prices
+     * @param fee
+     * @param sells 卖股票的日子下标集合
+     * @param buys 买股票的日子下标集合
+     * @return profit 收益
+     */
+    int maxProfit(std::vector<int>& prices, int& fee, std::vector<int>& sells, std::vector<int>& buys);
+
+    /**
+     * leetCode 123 买卖股票的最佳时机 III
+     * @param prices
+     * @return
+     */
+    int maxProfit(std::vector<int>& prices);
 };
 
 
