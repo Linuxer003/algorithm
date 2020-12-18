@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 class DFS {
 public:
@@ -16,7 +17,7 @@ public:
      * @param i
      * @return
      */
-    int k;
+    int tarSum;
     std::vector<int> A;
     bool FindK(int sum, int i);
 
@@ -36,7 +37,24 @@ public:
      * @return
      */
     bool possibleBipartition(int N, std::vector<std::vector<int>>& dislikes);
-    bool dfs(int index, int c, std::vector<int>& color, std::vector<std::vector<int>>& graph);
+    bool dfsBi(int index, int c, std::vector<int>& color, std::vector<std::vector<int>>& graph);
+
+    /**
+     * leetCode 123 买卖股票 dfs解法
+     * @param prices
+     * @return
+     */
+    int maxProfit(std::vector<int>& prices);
+    /**
+     *
+     * @param prices
+     * @param index 当前处理的日期下标
+     * @param state 当前手里是否有股票
+     * @param k     已经交易次数，当k=2，是递归的边界
+     * @param mem   记录递归状态，缩短耗时
+     * @return
+     */
+    int dfsProfit(std::vector<int>& prices, int index, int state, int k);
 };
 
 

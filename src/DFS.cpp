@@ -4,9 +4,10 @@
 
 #include "DFS.h"
 
+
 bool DFS::FindK(int sum, int i) {
   if (i == A.size())
-    return sum == k;
+    return sum == tarSum;
   if (FindK(sum, i + 1)) return true;
   if (FindK(sum + A[i], i + 1)) return true;
   return false;
@@ -35,21 +36,41 @@ bool DFS::possibleBipartition(int N, std::vector<std::vector<int>> &dislikes) {
   for (int i = 1; i <= N; ++i) {
     if (color[i] != 0)
       continue;
-    if (!dfs(i, 1, color, graph))
+    if (!dfsBi(i, 1, color, graph))
       return false;
   }
   return true;
 }
 
-bool DFS::dfs(int index, int c, std::vector<int> &color, std::vector<std::vector<int>> &graph) {
+bool DFS::dfsBi(int index, int c, std::vector<int> &color, std::vector<std::vector<int>> &graph) {
   if (color[index] != 0)
     return color[index] == c;
   color[index] = c;
   for (auto& value : graph[index]) {
-    if (!dfs(value, -c, color, graph))
+    if (!dfsBi(value, -c, color, graph))
       return false;
   }
   return true;
+}
+
+int DFS::maxProfit(std::vector<int> &prices) {
+  if (prices.empty())
+    return 0;
+
+  return dfsProfit(prices, 0, 0, 0);
+}
+
+int DFS::dfsProfit(std::vector<int> &prices, int index, int state, int k) {
+  if (index == prices.size() || k == 2)
+    return 0;
+  // 分别记录针对当天股价采取 不动、买、卖的收益
+  int a = 0, b = 0, c = 0;
+  a = dfsProfit(prices, index+1, state, k);
+  if (state == 0){
+    b = dfsProfit(prices, index+1, 1, k)-prices[index];
+  } else
+    c = dfsProfit(prices, index+1, 0, k+1)+prices[index];
+  return std::max(std::max(a,b),c);
 }
 
 

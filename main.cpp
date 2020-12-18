@@ -1,13 +1,17 @@
 #include <iostream>
+#include <string>
 #include <vector>
+#include <map>
+#include <queue>
+#include <algorithm>
 #include "src/DFS.h"
 #include "src/DP.h"
 #include "src/BFS.h"
+#include "src/Bits.h"
 
 int main() {
-  std::vector<int> prices = {1,3,2,8,4,9};
-  int fee = 2;
-  std::vector<int> sells, buys = {0};
-  DP d;
-  d.maxProfit(prices, fee, sells, buys);
+  Bits b;
+  std::string s = "abcd";
+  std::string t = "abcde";
+  std::cout << b.findTheDifference(s, t) << '\n';
 }
